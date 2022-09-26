@@ -8,7 +8,24 @@ header
 {
     display: flex;
 }
+
 .profil_picture
 {
     width: 5%;
+}
+
+.pokemon_card
+{
+    border-color: black;
+}
+
+.pokemon_picture
+{
+    height: 65%;
+}
+
+.pokemon_name
+{
+    height: 30%;
+    border-top: black;
 }
