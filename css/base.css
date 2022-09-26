@@ -1,0 +1,14 @@
+header
+{
+    display: flex;
+    background-color: red;
+}
+
+#header
+{
+    display: flex;
+}
+.profil_picture
+{
+    width: 5%;
+}
