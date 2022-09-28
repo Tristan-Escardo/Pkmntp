@@ -1,20 +1,34 @@
 header
 {
     display: flex;
-    background-color: red;
+    
 }
 
 #header
 {
     display: flex;
+    justify-content: space-between;
+    background-color: red;
+    height: 75px;
+}
+
+.name_app
+{
+    margin-left: 1%;
+    font-size: 40px;
+    font-weight: bolder;
+    font-style: italic;
+    color: yellow;
 }
 
 .profil_picture
 {
-    width: 5%;
+    width: 6%;
+    margin: 1%;
+    border-radius: 60%;
 }
 
-.pokemon_card
+#card
 {
     border-color: black;
 }
