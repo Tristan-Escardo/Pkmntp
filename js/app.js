@@ -1,29 +1,37 @@
-let pokemon = []
-fetch('https://pokeapi.co/api/v2/pokemon')
+fetch('https://pokeapi.co/api/v2/pokemon?limit=1000000')
 .then(response => response.json())
 .then(data => {
-    for (var i in data.results) {
-        pokemon.push(JSON.stringify(data.results[i]))
-        document.getElementById('test_name').textContent = pokemon
+    //console.log(data)
+    for (var i in data.results){
+        //console.log('url pkmn', data.results[i].url)
+        let pokemonName = document.createElement('button')
+        pokemonName.textContent =  data.results[i].name
+        document.getElementById('namePokemon').append(pokemonName)
+        pokemonName.style.margin = '1%'
+
+        //TODO pour chaque pokemon appeler le detail a l'aide de fetch
+        
+        fetch(data.results[i].url)
+        .then(response => response.json())
+        .then(data => console.log(data))
+            
+            /*
+            let pokemonAbilities = document.createElement('div')
+            pokemonAbilities.textContent = data
+            document.getElementById('abilitiesPokemon').append(pokemonAbilities)
+            
+            
+            let pokemonAbilities = document.createElement('p')
+            pokemonAbilities.textContent = data.abilities
+            document.getElementById('abilitiesPokemon').append(pokemonAbilities)
+            
+            for (var j in data.abilities){
+                console.log(data.abilities[j].ability)
+                let pokemonAbilities = document.createElement('p')
+                pokemonAbilities.textContent = data.abilities[j].ability
+                document.getElementById('abilitiesPokemon').append(pokemonAbilities)
+            }
+            */
+
     }
 })
-
-var k = 0
-var j = 9
-let Name = []
-
-while (k < pokemon.lenght) {
-    if (pokemon[k] [j] != '"'){
-        Name.push(pokemon[k] [j])
-        j++;
-    } else {
-        j++;
-    }
-
-    if (pokemon[k] [j] == '}') {
-        k++;
-        j = 9
-    }
-}
-
-console.log(Name)
